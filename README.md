@@ -33,3 +33,13 @@ Dependencies are expressed as public properties of the component
     }
 When constructing a FooComponent, Diva will look for a component that provides BarService and
 set the property bar to a new instance of it.
+
+### Building Diva
+
+Diva utilizes the [Meson build system](https://mesonbuildcom/Quick-guide.html).
+To build in the subdirectory `build`:
+
+    $ cd /path/to/source/root
+    $ meson build && cd build
+    $ ninja
+    $ ninja test
