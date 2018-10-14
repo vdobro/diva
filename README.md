@@ -36,7 +36,7 @@ set the property bar to a new instance of it.
 
 ### Building Diva
 
-Diva utilizes the [Meson build system](https://mesonbuildcom/Quick-guide.html).
+Diva utilizes the [Meson build system](https://mesonbuild.com/Quick-guide.html).
 To build in the subdirectory `build`:
 
     $ cd /path/to/source/root
