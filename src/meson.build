@@ -31,6 +31,9 @@ diva_lib = library('diva-' + lib_version, diva_sources,
   install_dir: [true, true, true, true],
 )
 
+diva_dep = declare_dependency(include_directories : diva_include,
+  link_with : diva_lib)
+
 g_ir_compiler = find_program('g-ir-compiler')
 custom_target('diva typelib',
   command: [
