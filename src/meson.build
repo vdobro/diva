@@ -33,7 +33,9 @@ diva_lib = library('diva', diva_sources,
 
 pkg = import('pkgconfig')
 pkg.generate(diva_lib,
-  description: 'Dependency injection library for vala/glib')
+  description: 'Dependency injection library for vala/glib',
+  install_dir: join_paths(get_option('libdir'), 'pkgconfig'),
+)
 
 diva_dep = declare_dependency(include_directories : diva_include,
   link_with : diva_lib)
