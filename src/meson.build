@@ -24,12 +24,16 @@ diva_include = include_directories('.')
 lib_version = '0.1'
 gir_file = 'Diva-' + lib_version + '.gir'
 
-diva_lib = library('diva-' + lib_version, diva_sources,
+diva_lib = library('diva', diva_sources,
   dependencies: diva_deps,
   vala_gir: gir_file,
   install: true,
   install_dir: [true, true, true, true],
 )
+
+pkg = import('pkgconfig')
+pkg.generate(diva_lib,
+  description: 'Dependency injection library for vala/glib')
 
 diva_dep = declare_dependency(include_directories : diva_include,
   link_with : diva_lib)
